@@ -1,23 +1,16 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import Usercard from './components/usercard.jsx';
+import Usercard from "../src/components/usercard"; // Ensure the file name matches exactly
 
 function App() {
-  const cards = Array.from({ length: 10 });
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '16px',
-    padding: '16px',
-  };
+  const cards = Array.from({ length: 10 }); // Creating an array of 10 user cards
 
   return (
-    <div style={gridStyle}>
-      {cards.map((_, index) => (
-        <Usercard key={index} />
-      ))}
+    <div className="app-container">
+      <h1 className="title">Admin Portal</h1>
+      <div className="user-grid">
+        {cards.map((_, index) => (
+          <Usercard key={index} />
+        ))}
+      </div>
     </div>
   );
 }
